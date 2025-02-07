@@ -33,7 +33,7 @@ const PopularProducts = () => {
             {product.image && (
               <div className="w-full h-[375px] relative">
                 <Image
-                  src={urlFor(product.image)?.url() || '/images/default-product.jpg'}  // Default image if no product image
+                  src={urlFor(product.image)?.url() ?? '/images/default-product.jpg'}  // Default image if no product image
                   alt={product.title}
                   layout="fill"
                   objectFit="cover"

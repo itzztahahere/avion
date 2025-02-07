@@ -81,14 +81,17 @@ const Product = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                         {product.map((product) => (
                             <div key={product._id} className="bg-white shadow-lg rounded-lg overflow-hidden">
+                                {product.image && (
                                 <div className="w-full relative h-[300px]">
                                     <Image
-                                            src={urlFor(product.image)?.url() || ""}
+                                            src={urlFor(product.image)?.url() ?? '/images/default-product.jpg'}
                                             alt={product.title}
                                             layout="fill"
                                             className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
                                         />
                                 </div>
+                                )}
+                                
                                 <div className="p-4">
                                     <h2 className="text-xl font-semibold text-dark-primary">{product.title}</h2>
                                     <p className="text-lg font-normal text-gray-600 mt-2">${product.price}</p>

@@ -32,8 +32,7 @@ const ProductCards = () => {
               <div className="w-full h-[375px] relative">
                 <Image
                   src={
-                    urlFor(product.image)?.url() ||
-                    "/images/default-product.jpg"
+                    urlFor(product.image)?.url() ?? '/images/default-product.jpg'
                   } // Default image if no product image
                   alt={product.title}
                   layout="fill"
